@@ -6,6 +6,7 @@ import java.util.List;
 public class Inventory {
    public List<Product> inventoryList = new ArrayList<>();
    public List<Product> reOrder = new ArrayList<>();
+   public List<Product> shrinkage = new ArrayList<>();
 
     public void addToInventory(Product product){
         inventoryList.add(product);
@@ -21,6 +22,11 @@ public class Inventory {
         }
 
     }
+
+    public void shrinkFromInventory() {
+
+    }
+
 
     public void displayProducts(List<Product> productList) {
         for (Product product : productList) {
