@@ -4,29 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
-   public List<Product> inventoryList = new ArrayList<>();
-   public List<Product> reOrder = new ArrayList<>();
-   public List<Product> shrinkage = new ArrayList<>();
+   private List<Product> inventoryList;
+   private List<Product> reOrder;
+   private List<Product> shrinkage;
+
+   public Inventory() {
+       this.inventoryList = new ArrayList<>();
+       this.reOrder = new ArrayList<>();
+       this.shrinkage = new ArrayList<>();
+   }
+
 
     public void addToInventory(Product product){
         inventoryList.add(product);
 
     }
 
-    public void removeFromInventory() {
-        for (Product product : inventoryList) {
-            if (product.getQtyAvailable() == 0) {
+    public void shrinkInventory(String name, int qty) {
+        double shrinkageTotal = 0;
+        for (Product product : getInventoryList()) {
+            if (product.getName().equals(name) && product.getQtyAvailable() > 0) {
+               // System.out.println("You selected to remove: " + product.getName() + " from inventory. Is this correct y/n: ");
                 inventoryList.remove(product);
-                reOrder.add(product);
+                shrinkage.add(product);
+                shrinkageTotal = qty * product.getRetailPricePerPound();
+                System.out.println();
+                System.out.println("Current shrinkage: " + shrinkageTotal);
+
             }
+
         }
 
     }
-
-    public void shrinkInventory() {
-
-    }
-
 
     public void displayProducts(List<Product> productList) {
         for (Product product : productList) {
@@ -34,27 +43,29 @@ public class Inventory {
         }
     }
 
-    public void sellProduct(String name, int qty) {
-        for (Product product : inventoryList) {
-//needs error check against name
-           if (name.equals(product.getName())) {
-                double total = Math.ceil(qty * product.getPricePerPound());
-                int itemQty = product.getQtyAvailable();
-                int newQty = itemQty - qty;
-                if (newQty <= 0) {
-                    inventoryList.remove(product);
-                    System.out.println("The current stock of " + product.getName() + " is " + newQty);
-                    System.out.println("Would like to place item on the reorder list? y/n");
-                    //if input = y add to reorderOrderReport
 
-                }
-                product.setQtyAvailable(newQty);
-                System.out.println("The total for this sale is: " + "$" + total);
-                break;
+   public List<Product> getInventoryList() {
+       return new ArrayList<>(inventoryList);
+   }
 
-            }
-        }
+    public void setInventoryList(List<Product> inventoryList) {
+        this.inventoryList = inventoryList;
+    }
 
+   public List<Product> getReOrder() {
+       return new ArrayList<>(reOrder);
+   }
+
+    public void setReOrder(List<Product> reOrder) {
+        this.reOrder = reOrder;
+    }
+
+   public List<Product> getShrinkage() {
+       return new ArrayList<>(shrinkage);
+   }
+
+    public void setShrinkage(List<Product> shrinkage) {
+        this.shrinkage = shrinkage;
     }
 
 
