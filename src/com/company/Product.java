@@ -15,9 +15,24 @@ public class Product {
         this.qtyAvailable = qtyAvailable;
     }
 
-    public String getCategory() {
+    public Product() {
 
+    }
+
+    public String getCategory() {
         return category;
+    }
+
+    public int getQtyAvailable() {
+        return qtyAvailable;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPricePerPound() {
+        return pricePerPound;
     }
 
 

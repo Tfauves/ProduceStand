@@ -15,7 +15,7 @@ public class Inventory {
 
     public void removeFromInventory() {
         for (Product product : inventoryList) {
-            if (product.qtyAvailable == 0) {
+            if (product.getQtyAvailable() == 0) {
                 inventoryList.remove(product);
                 reOrder.add(product);
             }
@@ -23,21 +23,21 @@ public class Inventory {
 
     }
 
-    public void shrinkFromInventory() {
+    public void shrinkInventory() {
 
     }
 
 
     public void displayProducts(List<Product> productList) {
         for (Product product : productList) {
-            System.out.println(product);
+            System.out.println(product.getName());
         }
     }
 
     public void sellProduct(String type, String name, int qty) {
         for (Product product : inventoryList) {
-            if (type.equals(product.getCategory()) && name.equals(product.name)) {
-                double total = qty * product.pricePerPound;
+            if (type.equals(product.getCategory()) && name.equals(product.getName())) {
+                double total = qty * product.getPricePerPound();
                 System.out.println(total);
             }
         }
