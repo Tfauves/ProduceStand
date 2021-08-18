@@ -4,8 +4,8 @@ public class Veggies extends Product{
     public boolean isInSeason;
 
 
-    public Veggies(String category, String inventoryId, String name, double pricePerPound, int qtyAvailable, boolean isInSeason) {
-        super(category, inventoryId, name, pricePerPound, qtyAvailable);
+    public Veggies(String category, String inventoryId, String name, double retailPricePerPound, double cost , int qtyAvailable, boolean isInSeason) {
+        super(category, inventoryId, name, retailPricePerPound, cost, qtyAvailable);
         this.isInSeason = isInSeason;
     }
 

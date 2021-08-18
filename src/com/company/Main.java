@@ -6,17 +6,29 @@ public class Main {
 	// write your code here
         ProduceStand myStand  = new ProduceStand();
 
-        myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, 6, "red"));
-        myStand.standInventory.addToInventory(new Meat("meat", "#003", "steak", 8.29, 3, true));
-        myStand.standInventory.addToInventory(new Veggies("veggies", "#006", "corn", 2.99, 12, true));
+//        myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, .94, 6, "red"));
+        myStand.standInventory.addToInventory(new Meat("meat", "#003", "steak", 8.29, 3.49, 4, true));
+        myStand.standInventory.addToInventory(new Veggies("veggies", "#006", "corn", 2.99, 1.29, 12,true));
 
-        myStand.standInventory.displayProducts(myStand.standInventory.inventoryList);
-        myStand.standInventory.sellProduct("apple", 6);
-        myStand.standInventory.displayProducts(myStand.standInventory.inventoryList);
+        myStand.purchaseInventory(new Fruit("Fruit", "#001", "peach", 1.89, 1.10, 8, "peach"));
 
-        for (Product product : myStand.standInventory.inventoryList) {
+        myStand.standInventory.displayProducts(myStand.standInventory.getInventoryList());
+        myStand.sellProduct("apple", 6);
+        myStand.standInventory.shrinkInventory("steak", 1);
+        myStand.standInventory.displayProducts(myStand.standInventory.getInventoryList());
+
+        for (Product product : myStand.standInventory.getInventoryList()) {
             System.out.println(product.getQtyAvailable());
         }
+
+        for (Product product : myStand.standInventory.getReOrder()) {
+            System.out.println(product.getName());
+        }
+
+        for (Product product : myStand.standInventory.getShrinkage()) {
+            System.out.println(product.getName());
+        }
+
 
 
 

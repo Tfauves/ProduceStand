@@ -4,14 +4,16 @@ public class Product {
     private String category;
     private String inventoryId;
     private String name;
-    private double pricePerPound;
+    private double retailPricePerPound;
+    private double cost;
     private int qtyAvailable;
 
-    public Product(String category, String inventoryId, String name, double pricePerPound, int qtyAvailable) {
+    public Product(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qtyAvailable) {
         this.category = category;
         this.inventoryId = inventoryId;
         this.name = name;
-        this.pricePerPound = pricePerPound;
+        this.cost = cost;
+        this.retailPricePerPound = retailPricePerPound;
         this.qtyAvailable = qtyAvailable;
     }
 
@@ -33,8 +35,8 @@ public class Product {
         return name;
     }
 
-    public double getPricePerPound() {
-        return pricePerPound;
+    public double getRetailPricePerPound() {
+        return retailPricePerPound;
     }
 
 
