@@ -15,12 +15,14 @@ public class Product {
         this.qtyAvailable = qtyAvailable;
     }
 
-    public Product() {
 
-    }
 
     public String getCategory() {
         return category;
+    }
+
+    public void setQtyAvailable(int newQty) {
+        qtyAvailable = newQty;
     }
 
     public int getQtyAvailable() {

@@ -34,11 +34,24 @@ public class Inventory {
         }
     }
 
-    public void sellProduct(String type, String name, int qty) {
+    public void sellProduct(String name, int qty) {
         for (Product product : inventoryList) {
-            if (type.equals(product.getCategory()) && name.equals(product.getName())) {
-                double total = qty * product.getPricePerPound();
-                System.out.println(total);
+//needs error check against name
+           if (name.equals(product.getName())) {
+                double total = Math.ceil(qty * product.getPricePerPound());
+                int itemQty = product.getQtyAvailable();
+                int newQty = itemQty - qty;
+                if (newQty <= 0) {
+                    inventoryList.remove(product);
+                    System.out.println("The current stock of " + product.getName() + " is " + newQty);
+                    System.out.println("Would like to place item on the reorder list? y/n");
+                    //if input = y add to reorderOrderReport
+
+                }
+                product.setQtyAvailable(newQty);
+                System.out.println("The total for this sale is: " + "$" + total);
+                break;
+
             }
         }
 
