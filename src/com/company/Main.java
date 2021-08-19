@@ -6,7 +6,8 @@ public class Main {
 	// write your code here
         ProduceStand myStand  = new ProduceStand();
 
-        myStand.console.displayMenu();
+        //myStand.console.displayMenu();
+        myStand.handleMenu();
 
 //        myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, .94, 6, "red"));
 //        myStand.standInventory.addToInventory(new Meat("meat", "#003", "steak", 8.29, 3.49, 4, true));
@@ -19,9 +20,9 @@ public class Main {
 //        myStand.standInventory.shrinkInventory("steak", 1);
 //        myStand.standInventory.displayProducts(myStand.standInventory.getInventoryList());
 //
-//        for (Product product : myStand.standInventory.getInventoryList()) {
-//            System.out.println(product.getQtyAvailable());
-//        }
+        for (Product product : myStand.standInventory.getInventoryList()) {
+            System.out.println(product.getQtyAvailable());
+        }
 //
 //        for (Product product : myStand.standInventory.getReOrder()) {
 //            System.out.println(product.getName());

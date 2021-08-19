@@ -15,10 +15,17 @@ public class Inventory {
    }
 
 
-    public void addToInventory(Product product){
-        inventoryList.add(product);
+    public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
+        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
+        inventoryList.add(produce);
 
     }
+
+//    public void addToInventory(Product product){
+//        inventoryList.add(product);
+//
+//    }
+
 
     public void shrinkInventory(String name, int qty) {
         double shrinkageTotal = 0;
