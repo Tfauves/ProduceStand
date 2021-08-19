@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         ProduceStand myStand  = new ProduceStand();
-        Console.displayMenu();
+
+        myStand.console.displayMenu();
 
 //        myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, .94, 6, "red"));
 //        myStand.standInventory.addToInventory(new Meat("meat", "#003", "steak", 8.29, 3.49, 4, true));
