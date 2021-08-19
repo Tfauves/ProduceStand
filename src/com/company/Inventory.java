@@ -18,8 +18,9 @@ public class Inventory {
     public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         inventoryList.add(produce);
-
     }
+
+
 
 //    public void addToInventory(Product product){
 //        inventoryList.add(product);
@@ -52,14 +53,16 @@ public class Inventory {
 
 
    public List<Product> getInventoryList() {
-       return new ArrayList<>(inventoryList);
+       return inventoryList;
    }
 
     public void setInventoryList(Product product) {
-        inventoryList.add(product);
+
+       inventoryList.add(product);
     }
 
    public List<Product> getReOrder() {
+
        return new ArrayList<>(reOrder);
    }
 
@@ -69,11 +72,13 @@ public class Inventory {
     }
 
    public List<Product> getShrinkage() {
+
        return new ArrayList<>(shrinkage);
    }
 
     public void setShrinkage(List<Product> shrinkage) {
-        this.shrinkage = shrinkage;
+
+       this.shrinkage = shrinkage;
     }
 
 

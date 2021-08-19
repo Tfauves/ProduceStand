@@ -19,10 +19,10 @@ public class Main {
 //        myStand.sellProduct("apple", 3);
 //        myStand.standInventory.shrinkInventory("steak", 1);
 //        myStand.standInventory.displayProducts(myStand.standInventory.getInventoryList());
-//
-        for (Product product : myStand.standInventory.getInventoryList()) {
-            System.out.println(product.getQtyAvailable());
-        }
+////
+//        for (Product product : myStand.standInventory.getInventoryList()) {
+//            System.out.println(product.getQtyAvailable());
+//        }
 //
 //        for (Product product : myStand.standInventory.getReOrder()) {
 //            System.out.println(product.getName());
