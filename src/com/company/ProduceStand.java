@@ -57,10 +57,16 @@ public class ProduceStand {
         double retailPricePerPound;
         double cost;
         int qty;
-        boolean isActiveMenu = true;
+            System.out.println(storeBalance);
+
+        do {
+
+
             console.displayMenu();
+
             switch (console.userSelection) {
                 case 1:
+                    System.out.println("%%%%%%%%%%%%% Purchase Item %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
                     category = console.scanner.next();
@@ -78,6 +84,8 @@ public class ProduceStand {
                     break;
 
                 case 2:
+                    System.out.println("%%%%%%%%%%%%% Sell %%%%%%%%%%%%% ");
+                    standInventory.displayProducts(standInventory.getInventoryList());
                     System.out.println("Name: ");
                     name = console.scanner.next();
                     System.out.println("Qty");
@@ -86,6 +94,7 @@ public class ProduceStand {
                     break;
 
                 case 3:
+                    System.out.println("%%%%%%%%%%%%% Dispose Item %%%%%%%%%%%%% ");
                     System.out.println("Name: ");
                     name = console.scanner.nextLine();
                     System.out.println("Qty");
@@ -94,6 +103,7 @@ public class ProduceStand {
                     break;
 
                 case 4:
+                    System.out.println("%%%%%%%%%%%%% Add Item To Inventory %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
                     category = console.scanner.next();
@@ -111,12 +121,13 @@ public class ProduceStand {
                     break;
 
                 case 5:
+                    System.out.println("%%%%%%%%%%%%% Operating Fund %%%%%%%%%%%%% ");
                     disPlayStoreBalance();
                     break;
 
                 case 6:
+                    System.out.println("%%%%%%%%%%%%% Exit Menu %%%%%%%%%%%%% ");
                     System.out.println("Exiting");
-                    isActiveMenu = false;
                     break;
 
                 default:
@@ -125,7 +136,7 @@ public class ProduceStand {
 
 
             }
-
+        } while(console.userSelection != 6);
     }
 
 

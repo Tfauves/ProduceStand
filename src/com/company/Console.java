@@ -8,7 +8,6 @@ public class Console {
 
 
 
-
     public void displayMenu() {
             System.out.println("%%%%%%%%%%%%% Menu Options %%%%%%%%%%%%% ");
             System.out.println("1). Purchase Inventory.");
@@ -20,17 +19,9 @@ public class Console {
             System.out.println("Enter selection: ");
 
             userSelection = scanner.nextInt();
+            spaces();
     }
 
-//    public void handleMenu() {
-//        switch (userSelection) {
-//            case 1:
-//
-//
-//
-//
-//        }
-//    }
 
     public static void spaces() {
         int spaceCounter = 0;
