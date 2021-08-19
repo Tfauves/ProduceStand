@@ -16,7 +16,8 @@ public class ProduceStand {
                 int newQty = itemQty - qty;
                 if (newQty <= 0) {
                     standInventory.getInventoryList().remove(product);
-                    standInventory.getReOrder().add(product);
+//                    standInventory.getReOrder().add(product);
+                    standInventory.setReOrder(product);
                     System.out.println("The current stock of " + product.getName() + " is " + newQty);
                     System.out.println("Would like to place item on the reorder list? y/n");
                     //if input = y add to reorderOrderReport
@@ -34,9 +35,13 @@ public class ProduceStand {
     }
 
     public void purchaseInventory(Product product) {
+        standInventory.setInventoryList(product);
+        storeBalance -= product.getCost();
 
-        standInventory.getInventoryList().add(product);
+    }
 
+    public void disPlayStoreBalance() {
+        System.out.println("The current stand balance is: " + storeBalance);
     }
 
 

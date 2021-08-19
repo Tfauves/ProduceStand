@@ -48,16 +48,17 @@ public class Inventory {
        return new ArrayList<>(inventoryList);
    }
 
-    public void setInventoryList(List<Product> inventoryList) {
-        this.inventoryList = inventoryList;
+    public void setInventoryList(Product product) {
+        inventoryList.add(product);
     }
 
    public List<Product> getReOrder() {
        return new ArrayList<>(reOrder);
    }
 
-    public void setReOrder(List<Product> reOrder) {
-        this.reOrder = reOrder;
+    public void setReOrder(Product product) {
+
+       reOrder.add(product);
     }
 
    public List<Product> getShrinkage() {

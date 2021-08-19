@@ -39,5 +39,9 @@ public class Product {
         return retailPricePerPound;
     }
 
+    public double getCost() {
+        return cost;
+    }
+
 
 }
