@@ -47,10 +47,10 @@ public class Inventory {
 
     public void displayProducts(List<Product> productList) {
         for (Product product : productList) {
-            System.out.println(product.getName());
+            System.out.println("Stock of " + product.getName() + " is " + product.getQtyAvailable() + " priced at " + "$" + product.getRetailPricePerPound() + " per pound.");
+
         }
     }
-
 
    public List<Product> getInventoryList() {
        return inventoryList;

@@ -15,6 +15,7 @@ public class Console {
             System.out.println("3). Shrink Inventory.");
             System.out.println("4). Add Product To Inventory.");
             System.out.println("5). Display Store Balance.");
+        System.out.println();
             System.out.println("6). Exit");
             System.out.println("Enter selection: ");
 
