@@ -8,8 +8,7 @@ public class Main {
 
         //myStand.console.displayMenu();
         myStand.handleMenu();
-
-//        myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, .94, 6, "red"));
+//          myStand.standInventory.addToInventory(new Fruit("fruit", "#001", "apple", 1.59, .94, 6, "red"));
 //        myStand.standInventory.addToInventory(new Meat("meat", "#003", "steak", 8.29, 3.49, 4, true));
 //        myStand.standInventory.addToInventory(new Veggies("veggies", "#006", "corn", 2.99, 1.29, 12,true));
 //
