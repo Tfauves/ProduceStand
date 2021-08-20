@@ -23,6 +23,12 @@ public class Console {
             spaces();
     }
 
+    public void purchaseInventoryDisplay() {
+
+    }
+
+
+
 
     public static void spaces() {
         int spaceCounter = 0;
