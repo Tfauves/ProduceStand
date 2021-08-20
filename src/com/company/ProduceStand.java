@@ -4,7 +4,7 @@ public class ProduceStand {
     public Console console = new Console();
     public Inventory standInventory = new Inventory();
     private double storeBalance = 200;
-
+// TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
 
 
     public void sellProduct(String name, int qty) {
@@ -33,6 +33,7 @@ public class ProduceStand {
 
     }
 
+    // TODO: 8/20/2021 store balance does not decrement when purchasing.
     public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         standInventory.setInventoryList(produce);

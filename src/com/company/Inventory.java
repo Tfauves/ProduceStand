@@ -14,7 +14,7 @@ public class Inventory {
        this.shrinkage = new ArrayList<>();
    }
 
-
+    // TODO: 8/20/2021 add menu of which object to create and add to inventory 
     public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         inventoryList.add(produce);
