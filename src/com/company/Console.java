@@ -23,9 +23,7 @@ public class Console {
             spaces();
     }
 
-    public void purchaseInventoryDisplay() {
 
-    }
 
 
 
