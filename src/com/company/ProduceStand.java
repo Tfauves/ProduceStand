@@ -36,7 +36,8 @@ public class ProduceStand {
     public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         standInventory.setInventoryList(produce);
-        storeBalance -= produce.getCost();
+        double purchaseTotal = produce.getCost() * qty;
+        storeBalance -= purchaseTotal;
     }
 
 
