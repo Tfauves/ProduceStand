@@ -33,7 +33,6 @@ public class ProduceStand {
 
     }
 
-    // TODO: 8/20/2021 store balance does not decrement when purchasing.
     public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         standInventory.setInventoryList(produce);
@@ -41,19 +40,12 @@ public class ProduceStand {
         storeBalance -= purchaseTotal;
     }
 
-
-//    public void purchaseInventory(Product product) {
-//        standInventory.setInventoryList(product);
-//        storeBalance -= product.getCost();
-//
-//    }
-
     public void disPlayStoreBalance() {
         System.out.println("The current stand balance is: " + storeBalance);
     }
 
     public void handleMenu() {
-        String category;
+        String categorySelection;
         String inventoryId;
         String name;
         double retailPricePerPound;
@@ -68,7 +60,7 @@ public class ProduceStand {
                     System.out.println("%%%%%%%%%%%%% Purchase Item %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
-                    category = console.scanner.next();
+                    categorySelection = console.scanner.next();
                     System.out.println("Inventory Id: ");
                     inventoryId = console.scanner.next();
                     System.out.println("Name: ");
@@ -79,7 +71,7 @@ public class ProduceStand {
                     cost = console.scanner.nextDouble();
                     System.out.println("Qty: ");
                     qty = console.scanner.nextInt();
-                    purchaseInventory(category, inventoryId, name, retailPricePerPound, cost, qty);
+                    purchaseInventory(categorySelection, inventoryId, name, retailPricePerPound, cost, qty);
                     break;
 
                 case 2:
@@ -105,18 +97,12 @@ public class ProduceStand {
                     System.out.println("%%%%%%%%%%%%% Add Item To Inventory %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
-                    category = console.scanner.next();
-                    System.out.println("Inventory Id: ");
-                    inventoryId = console.scanner.next();
-                    System.out.println("Name: ");
-                    name = console.scanner.next();
-                    System.out.println("Retail price per pound: ");
-                    retailPricePerPound = console.scanner.nextDouble();
-                    System.out.println("Cost: ");
-                    cost = console.scanner.nextDouble();
-                    System.out.println("Qty: ");
-                    qty = console.scanner.nextInt();
-                    standInventory.addToInventory(category, inventoryId, name, retailPricePerPound, cost, qty);
+                    System.out.println("""
+                            1). Fruits:\s
+                            2). Meats: \s
+                            3). Veggies:\s""");
+                    categorySelection = console.scanner.next();
+                    standInventory.addToInventory(categorySelection);
                     break;
 
                 case 5:

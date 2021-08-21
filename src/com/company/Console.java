@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class Console {
-    public Scanner scanner = new Scanner(System.in);
+    public static final Scanner scanner = new Scanner(System.in);
     public int userSelection;
 
 

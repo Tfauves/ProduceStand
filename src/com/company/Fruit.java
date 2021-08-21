@@ -7,5 +7,13 @@ public class Fruit extends Product{
         super(category, inventoryId, name, retailPricePerPound, cost, qtyAvailable);
         this.color = color;
     }
+    public Fruit(String type, String color, int qty, double price) {
 
+        super(type, qty, price);
+        this.color = color;
+    }
+//
+//    public String getColor() {
+//        return color;
+//    }
 }
