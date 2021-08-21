@@ -4,7 +4,7 @@ public class ProduceStand {
     public Console console = new Console();
     public Inventory standInventory = new Inventory();
     private double storeBalance = 200;
-
+// TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
 
 
     public void sellProduct(String name, int qty) {
@@ -33,6 +33,7 @@ public class ProduceStand {
 
     }
 
+    // TODO: 8/20/2021 store balance does not decrement when purchasing.
     public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
         Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         standInventory.setInventoryList(produce);
@@ -51,20 +52,17 @@ public class ProduceStand {
         System.out.println("The current stand balance is: " + storeBalance);
     }
 
-        public void handleMenu() {
+    public void handleMenu() {
         String category;
         String inventoryId;
         String name;
         double retailPricePerPound;
         double cost;
         int qty;
-            System.out.println(storeBalance);
+        int exit = 7;
 
         do {
-
-
             console.displayMenu();
-
             switch (console.userSelection) {
                 case 1:
                     System.out.println("%%%%%%%%%%%%% Purchase Item %%%%%%%%%%%%% ");
@@ -97,7 +95,7 @@ public class ProduceStand {
                 case 3:
                     System.out.println("%%%%%%%%%%%%% Dispose Item %%%%%%%%%%%%% ");
                     System.out.println("Name: ");
-                    name = console.scanner.nextLine();
+                    name = console.scanner.next();
                     System.out.println("Qty");
                     qty = console.scanner.nextInt();
                     standInventory.shrinkInventory(name, qty);
@@ -109,9 +107,9 @@ public class ProduceStand {
                     System.out.println("Category: ");
                     category = console.scanner.next();
                     System.out.println("Inventory Id: ");
-                    inventoryId = console.scanner.nextLine();
+                    inventoryId = console.scanner.next();
                     System.out.println("Name: ");
-                    name = console.scanner.nextLine();
+                    name = console.scanner.next();
                     System.out.println("Retail price per pound: ");
                     retailPricePerPound = console.scanner.nextDouble();
                     System.out.println("Cost: ");
@@ -127,6 +125,10 @@ public class ProduceStand {
                     break;
 
                 case 6:
+                    standInventory.displayProducts(standInventory.getInventoryList());
+                    break;
+
+                case 7:
                     System.out.println("%%%%%%%%%%%%% Exit Menu %%%%%%%%%%%%% ");
                     System.out.println("Exiting");
                     break;
@@ -137,7 +139,7 @@ public class ProduceStand {
 
 
             }
-        } while(console.userSelection != 6);
+        } while(console.userSelection != exit);
     }
 
 
