@@ -9,5 +9,11 @@ public class Veggies extends Product{
         this.isInSeason = isInSeason;
     }
 
+    public Veggies(String type, boolean isInSeason, int qty, double price) {
+
+        super(type, qty, price);
+        this.isInSeason = isInSeason;
+    }
+
 
 }

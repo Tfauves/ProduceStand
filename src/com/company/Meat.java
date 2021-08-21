@@ -9,5 +9,11 @@ public class Meat extends Product{
         this.isMarinated = isMarinated;
     }
 
+    public Meat(String type, int qty, double price) {
+
+        super(type, qty, price);
+
+    }
+
 
 }
