@@ -23,7 +23,18 @@ public class Console {
             spaces();
     }
 
+    public void displayProducts(List<Product> productList) {
+            System.out.println("%%%%%%%%%%% Inventory Report %%%%%%%%%%%");
+            System.out.println("-----------------------------------------");
+            System.out.println();
 
+            for (Product product : productList) {
+                System.out.println("Stock of " + product.getName() + " is " + product.getQtyAvailable() + " priced at " + "$" + product.getRetailPricePerPound() + " per pound.");
+
+            }
+            System.out.println("-----------------------------------------");
+            System.out.println();
+    }
 
 
 
