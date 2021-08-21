@@ -76,7 +76,7 @@ public class ProduceStand {
 
                 case 2:
                     System.out.println("%%%%%%%%%%%%% Sell %%%%%%%%%%%%% ");
-                    standInventory.displayProducts(standInventory.getInventoryList());
+                    console.displayProducts(standInventory.getInventoryList());
                     System.out.println("Name: ");
                     name = console.scanner.next();
                     System.out.println("Qty");
@@ -111,7 +111,7 @@ public class ProduceStand {
                     break;
 
                 case 6:
-                    standInventory.displayProducts(standInventory.getInventoryList());
+                    console.displayProducts(standInventory.getInventoryList());
                     break;
 
                 case 7:

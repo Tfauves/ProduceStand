@@ -12,8 +12,8 @@ public class Fruit extends Product{
         super(type, qty, price);
         this.color = color;
     }
-//
-//    public String getColor() {
-//        return color;
-//    }
+
+   public String getColor() {
+       return color;
+    }
 }
