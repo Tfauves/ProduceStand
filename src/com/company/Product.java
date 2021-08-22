@@ -16,6 +16,7 @@ public class Product {
         this.retailPricePerPound = retailPricePerPound;
         this.qtyAvailable = qtyAvailable;
     }
+    //overloaded constructors.
     public Product(String type, int qty, double retailPricePerPound) {
         this.type = type;
         this.qtyAvailable = qty;

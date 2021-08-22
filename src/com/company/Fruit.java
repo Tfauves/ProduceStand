@@ -7,6 +7,7 @@ public class Fruit extends Product{
         super(category, inventoryId, name, retailPricePerPound, cost, qtyAvailable);
         this.color = color;
     }
+    //new overloaded constructors
     public Fruit(String type, String color, int qty, double price) {
 
         super(type, qty, price);

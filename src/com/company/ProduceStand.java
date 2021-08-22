@@ -4,8 +4,14 @@ public class ProduceStand {
     public Console console = new Console();
     public Inventory standInventory = new Inventory();
     private double storeBalance = 200;
+    private  boolean isOpen = false;
 // TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
 
+
+    public void open() {
+        isOpen = true;
+        handleMenu();
+    }
 
     public void sellProduct(String name, int qty) {
         for (Product product : standInventory.getInventoryList()) {
@@ -74,16 +80,6 @@ public class ProduceStand {
                             3). Veggies:\s""");
                     //access though instance reference or via static member.
                     categorySelection = Console.scanner.next();
-//                    System.out.println("Inventory Id: ");
-//                    inventoryId = Console.scanner.next();
-//                    System.out.println("Name: ");
-//                    name = Console.scanner.next();
-//                    System.out.println("Retail price per pound: ");
-//                    retailPricePerPound = Console.scanner.nextDouble();
-//                    System.out.println("Cost: ");
-//                    cost = Console.scanner.nextDouble();
-//                    System.out.println("Qty: ");
-//                    qty = Console.scanner.nextInt();
                     purchaseInventory(categorySelection);
                     break;
 
