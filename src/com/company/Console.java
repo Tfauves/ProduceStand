@@ -13,6 +13,7 @@ public class Console {
         System.out.println("%%%%%%%%%%%%% OPEN %%%%%%%%%%%%%");
         System.out.println("Enter employee Id: ");
         String validId = scanner.next();
+        spaces();
         if (validId.equals("13")) {
             homeScreen();
 
@@ -23,14 +24,18 @@ public class Console {
     }
 
     public void homeScreen() {
+        System.out.println("             Summary"             );
+        System.out.println("---------------------------------");
         Date date = Calendar.getInstance().getTime();
         System.out.println(date);
+        System.out.println();
         System.out.println("There are no open orders: ");
         System.out.println("Open P/O's: 0");
+        System.out.println("---------------------------------");
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println();
+
 
     }
 
@@ -62,6 +67,8 @@ public class Console {
             System.out.println("-----------------------------------------");
             System.out.println();
     }
+
+
 
 
 
