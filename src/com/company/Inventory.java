@@ -1,25 +1,28 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Inventory {
    private List<Product> inventoryList;
    private List<Product> reOrder;
    private List<Product> shrinkage;
+   private List<Product> purchasedInventory;
    private double margin = 1.67;
 
    public Inventory() {
        this.inventoryList = new ArrayList<>();
        this.reOrder = new ArrayList<>();
        this.shrinkage = new ArrayList<>();
+       this.purchasedInventory = new ArrayList<>();
    }
 
-    // TODO: 8/20/2021 add menu of which object to create and add to inventory 
-    public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
-        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
-        inventoryList.add(produce);
-    }
+//    public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
+//        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
+//        inventoryList.add(produce);
+//    }
 
     public void addToInventory(String category) {
 //        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
