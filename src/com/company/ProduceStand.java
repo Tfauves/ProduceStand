@@ -60,17 +60,18 @@ public class ProduceStand {
                     System.out.println("%%%%%%%%%%%%% Purchase Item %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
-                    categorySelection = console.scanner.next();
+                    //access though instance reference or via static member.
+                    categorySelection = Console.scanner.next();
                     System.out.println("Inventory Id: ");
-                    inventoryId = console.scanner.next();
+                    inventoryId = Console.scanner.next();
                     System.out.println("Name: ");
-                    name = console.scanner.next();
+                    name = Console.scanner.next();
                     System.out.println("Retail price per pound: ");
-                    retailPricePerPound = console.scanner.nextDouble();
+                    retailPricePerPound = Console.scanner.nextDouble();
                     System.out.println("Cost: ");
-                    cost = console.scanner.nextDouble();
+                    cost = Console.scanner.nextDouble();
                     System.out.println("Qty: ");
-                    qty = console.scanner.nextInt();
+                    qty = Console.scanner.nextInt();
                     purchaseInventory(categorySelection, inventoryId, name, retailPricePerPound, cost, qty);
                     break;
 
@@ -78,18 +79,18 @@ public class ProduceStand {
                     System.out.println("%%%%%%%%%%%%% Sell %%%%%%%%%%%%% ");
                     console.displayProducts(standInventory.getInventoryList());
                     System.out.println("Name: ");
-                    name = console.scanner.next();
+                    name = Console.scanner.next();
                     System.out.println("Qty");
-                    qty = console.scanner.nextInt();
+                    qty = Console.scanner.nextInt();
                     sellProduct(name, qty);
                     break;
 
                 case 3:
                     System.out.println("%%%%%%%%%%%%% Dispose Item %%%%%%%%%%%%% ");
                     System.out.println("Name: ");
-                    name = console.scanner.next();
+                    name = Console.scanner.next();
                     System.out.println("Qty");
-                    qty = console.scanner.nextInt();
+                    qty = Console.scanner.nextInt();
                     standInventory.shrinkInventory(name, qty);
                     break;
 
@@ -101,7 +102,7 @@ public class ProduceStand {
                             1). Fruits:\s
                             2). Meats: \s
                             3). Veggies:\s""");
-                    categorySelection = console.scanner.next();
+                    categorySelection = Console.scanner.next();
                     standInventory.addToInventory(categorySelection);
                     break;
 
