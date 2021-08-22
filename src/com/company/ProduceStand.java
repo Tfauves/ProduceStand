@@ -7,16 +7,17 @@ public class ProduceStand {
     public Console console = new Console();
     public Inventory standInventory = new Inventory();
     private double storeBalance = 200;
-    private  boolean isOpen = false;
-// TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
+    // TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
+
+
 
     // TODO: 8/22/2021 employee validation, employee class? with map or list?
     public void open() {
-        isOpen = true;
+        boolean showOpenInfo = true;
+//        boolean isOpen = true;
+
         console.openLogin();
-
         handleMenu();
-
 
 
     }
@@ -126,7 +127,11 @@ public class ProduceStand {
 
                 case 5:
                     System.out.println("%%%%%%%%%%%%% Operating Fund %%%%%%%%%%%%% ");
+                    System.out.println();
                     disPlayStoreBalance();
+                    System.out.println();
+                    System.out.println();
+                    System.out.println();
                     break;
 
                 case 6:
@@ -146,11 +151,6 @@ public class ProduceStand {
             }
         } while(console.userSelection != exit);
     }
-
-    public double getStoreBalance() {
-        return storeBalance;
-    }
-
 
 
 }
