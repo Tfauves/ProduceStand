@@ -40,6 +40,14 @@ public class ProduceStand {
         storeBalance -= purchaseTotal;
     }
 
+    public void purchaseInventory(String category) {
+
+//        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
+//        standInventory.setInventoryList(produce);
+//        double purchaseTotal = produce.getCost() * qty;
+//        storeBalance -= purchaseTotal;
+    }
+
     public void disPlayStoreBalance() {
         System.out.println("The current stand balance is: " + storeBalance);
     }
@@ -60,19 +68,23 @@ public class ProduceStand {
                     System.out.println("%%%%%%%%%%%%% Purchase Item %%%%%%%%%%%%% ");
                     System.out.println("Enter Item details: ");
                     System.out.println("Category: ");
+                    System.out.println("""
+                            1). Fruits:\s
+                            2). Meats: \s
+                            3). Veggies:\s""");
                     //access though instance reference or via static member.
                     categorySelection = Console.scanner.next();
-                    System.out.println("Inventory Id: ");
-                    inventoryId = Console.scanner.next();
-                    System.out.println("Name: ");
-                    name = Console.scanner.next();
-                    System.out.println("Retail price per pound: ");
-                    retailPricePerPound = Console.scanner.nextDouble();
-                    System.out.println("Cost: ");
-                    cost = Console.scanner.nextDouble();
-                    System.out.println("Qty: ");
-                    qty = Console.scanner.nextInt();
-                    purchaseInventory(categorySelection, inventoryId, name, retailPricePerPound, cost, qty);
+//                    System.out.println("Inventory Id: ");
+//                    inventoryId = Console.scanner.next();
+//                    System.out.println("Name: ");
+//                    name = Console.scanner.next();
+//                    System.out.println("Retail price per pound: ");
+//                    retailPricePerPound = Console.scanner.nextDouble();
+//                    System.out.println("Cost: ");
+//                    cost = Console.scanner.nextDouble();
+//                    System.out.println("Qty: ");
+//                    qty = Console.scanner.nextInt();
+                    purchaseInventory(categorySelection);
                     break;
 
                 case 2:
