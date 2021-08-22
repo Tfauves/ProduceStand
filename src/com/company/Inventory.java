@@ -23,7 +23,7 @@ public class Inventory {
 //        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
 //        inventoryList.add(produce);
 //    }
-
+// This new method to handle adding items to inventory.
     public void addToInventory(String category) {
 //        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         switch (category) {
