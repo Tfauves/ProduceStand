@@ -8,6 +8,33 @@ public class Console {
 
 
 
+
+    public void openLogin() {
+        System.out.println("%%%%%%%%%%%%% OPEN %%%%%%%%%%%%%");
+        System.out.println("Enter employee Id: ");
+        String validId = scanner.next();
+        if (validId.equals("13")) {
+            homeScreen();
+
+
+        } else {
+            openLogin();
+        }
+    }
+
+    public void homeScreen() {
+        Date date = Calendar.getInstance().getTime();
+        System.out.println(date);
+        System.out.println("There are no open orders: ");
+        System.out.println("Open P/O's: 0");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+    }
+
+
     public void displayMenu() {
             System.out.println("%%%%%%%%%%%%% Menu Options %%%%%%%%%%%%% ");
             System.out.println("1). Purchase Inventory.");
