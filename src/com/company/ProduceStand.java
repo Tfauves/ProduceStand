@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class ProduceStand {
     public Console console = new Console();
     public Inventory standInventory = new Inventory();
@@ -7,11 +10,21 @@ public class ProduceStand {
     private  boolean isOpen = false;
 // TODO: 8/20/2021 change from double to longs and convert from cents to dollars for display.
 
-
+    // TODO: 8/22/2021 employee validation, employee class? with map or list?
     public void open() {
         isOpen = true;
+        console.openLogin();
+
         handleMenu();
+
+
+
     }
+
+
+
+
+
 
     public void sellProduct(String name, int qty) {
         for (Product product : standInventory.getInventoryList()) {
@@ -60,10 +73,7 @@ public class ProduceStand {
 
     public void handleMenu() {
         String categorySelection;
-        String inventoryId;
         String name;
-        double retailPricePerPound;
-        double cost;
         int qty;
         int exit = 7;
 
@@ -137,6 +147,9 @@ public class ProduceStand {
         } while(console.userSelection != exit);
     }
 
+    public double getStoreBalance() {
+        return storeBalance;
+    }
 
 
 
