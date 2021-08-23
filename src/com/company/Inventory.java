@@ -19,6 +19,7 @@ public class Inventory {
        this.purchasedInventory = new ArrayList<>();
    }
 
+
 //    public void addToInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
 //        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
 //        inventoryList.add(produce);
@@ -103,9 +104,9 @@ public class Inventory {
                 product.setQtyAvailable(product.getQtyAvailable() - qty);
                // System.out.println("You selected to remove: " + product.getName() + " from inventory. Is this correct y/n: ");
                 shrinkage.add(product);
-                shrinkageTotal = qty * product.getRetailPricePerPound();
+                shrinkageTotal = qty * product.getCost();
                 System.out.println();
-                System.out.println("Current shrinkage: " + qty + " " + product.getName() + shrinkageTotal);
+                System.out.println("Current shrinkage: " + qty + " " + product.getName() + " for a loss of: " + shrinkageTotal);
 
            }
 
@@ -149,6 +150,10 @@ public class Inventory {
     public void setShrinkage(List<Product> shrinkage) {
 
        this.shrinkage = shrinkage;
+    }
+
+    public double getMargin() {
+       return margin;
     }
 
 

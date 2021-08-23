@@ -53,19 +53,91 @@ public class ProduceStand {
 
     }
 
-    public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
-        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
-        standInventory.setInventoryList(produce);
-        double purchaseTotal = produce.getCost() * qty;
-        storeBalance -= purchaseTotal;
-    }
-
-    public void purchaseInventory(String category) {
-
+//    public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
 //        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
 //        standInventory.setInventoryList(produce);
 //        double purchaseTotal = produce.getCost() * qty;
 //        storeBalance -= purchaseTotal;
+//    }
+
+    public void purchaseInventory(String category) {
+        switch (category) {
+            case "1":
+                System.out.println("Name: ");
+                String fruitType = Console.scanner.next();
+                Console.scanner.nextLine();
+                System.out.println("Color: ");
+                String fruitColor = Console.scanner.next();
+                System.out.println("Qty: ");
+                int fruitQty = Console.scanner.nextInt();
+                System.out.println("Cost per pound: ");
+                double fruitCost = Console.scanner.nextDouble();
+                double fruitPurchaseTotal = fruitCost * fruitQty;
+                storeBalance -= fruitPurchaseTotal;
+                double fruitRetailPricePerPound = Math.round(fruitCost * standInventory.getMargin());
+                Fruit fruit = new Fruit(fruitType, fruitColor, fruitQty, fruitRetailPricePerPound);
+                standInventory.setInventoryList(fruit);
+                break;
+            case "2":
+                System.out.println("Name: ");
+                String meatType = Console.scanner.next();
+                Console.scanner.nextLine();
+                System.out.println("Qty: ");
+                int meatQty = Console.scanner.nextInt();
+                System.out.println("Cost per pound: ");
+                double meatCost = Console.scanner.nextDouble();
+                double meatPurchaseTotal = meatCost * meatQty;
+                storeBalance -= meatPurchaseTotal;
+                double meatRetailPricePerPound = Math.round(meatCost * standInventory.getMargin());
+                Meat meat = new Meat(meatType, meatQty, meatRetailPricePerPound);
+                standInventory.setInventoryList(meat);
+                break;
+            case "3":
+                System.out.println("Name: ");
+                String vegType = Console.scanner.next();
+                Console.scanner.nextLine();
+                System.out.println("In season y/n: ");
+                String seasonalDiscount = Console.scanner.next();
+                if(seasonalDiscount.equals("y")) {
+                    double margin = 1.57;
+                    System.out.println("Qty: ");
+                    int vegQty = Console.scanner.nextInt();
+                    System.out.println("Cost per pound: ");
+                    double vegCost = Console.scanner.nextDouble();
+                    double vegPurchaseTotal = vegCost * vegQty;
+                    storeBalance -= vegPurchaseTotal;
+                    double vegRetailPricePerPound = Math.round(vegCost * margin);
+                    Veggies veggies = new Veggies(vegType, true, vegQty, vegRetailPricePerPound);
+                    standInventory.setInventoryList(veggies);
+                    break;
+
+                } else if (seasonalDiscount.equals("n")) {
+                    System.out.println("Qty: ");
+                    int vegQty = Console.scanner.nextInt();
+                    System.out.println("Cost per pound: ");
+                    double vegCost = Console.scanner.nextDouble();
+                    double vegPurchaseTotal = vegCost * vegCost;
+                    storeBalance -= vegPurchaseTotal;
+                    double vegRetailPricePerPound = Math.round(vegCost * standInventory.getMargin());
+                    Veggies veggies = new Veggies(vegType, false, vegQty, vegRetailPricePerPound);
+                    standInventory.setInventoryList(veggies);
+                    break;
+                }
+            default:
+                System.out.println("Name: ");
+                String productType = Console.scanner.next();
+                System.out.println("Qty: ");
+                int productQty = Console.scanner.nextInt();
+                System.out.println("Cost per pound: ");
+                double productCost = Console.scanner.nextDouble();
+                double productPurchaseTotal = productCost * productQty;
+                storeBalance -= productPurchaseTotal;
+                double productRetailPricePerPound = Math.round(productCost * standInventory.getMargin());
+                Product produce = new Product(productType, productQty, productRetailPricePerPound);
+                standInventory.setInventoryList(produce);
+                break;
+        }
+
     }
 
     public void disPlayStoreBalance() {
