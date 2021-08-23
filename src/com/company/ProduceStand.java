@@ -13,13 +13,8 @@ public class ProduceStand {
 
     // TODO: 8/22/2021 employee validation, employee class? with map or list?
     public void open() {
-        boolean showOpenInfo = true;
-//        boolean isOpen = true;
-
         console.openLogin();
         handleMenu();
-
-
     }
 
 
@@ -40,7 +35,6 @@ public class ProduceStand {
                     System.out.println("The current stock of " + product.getName() + " is " + newQty);
                     System.out.println("Would like to place item on the reorder list? y/n");
                     //if input = y add to reorderOrderReport
-
                 }
                 product.setQtyAvailable(newQty);
                 storeBalance += total;
@@ -52,13 +46,6 @@ public class ProduceStand {
         }
 
     }
-
-//    public void purchaseInventory(String category, String inventoryId, String name, double retailPricePerPound, double cost, int qty) {
-//        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
-//        standInventory.setInventoryList(produce);
-//        double purchaseTotal = produce.getCost() * qty;
-//        storeBalance -= purchaseTotal;
-//    }
 
     public void purchaseInventory(String category) {
         switch (category) {
@@ -218,8 +205,6 @@ public class ProduceStand {
                 default:
                     System.out.println("Invalid entry!");
                     break;
-
-
             }
         } while(console.userSelection != exit);
     }

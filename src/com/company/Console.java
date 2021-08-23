@@ -6,9 +6,6 @@ public class Console {
     public static final Scanner scanner = new Scanner(System.in);
     public int userSelection;
 
-
-
-
     public void openLogin() {
         System.out.println("%%%%%%%%%%%%% OPEN %%%%%%%%%%%%%");
         System.out.println("Enter employee Id: ");
@@ -16,8 +13,6 @@ public class Console {
         spaces();
         if (validId.equals("13")) {
             homeScreen();
-
-
         } else {
             openLogin();
         }
@@ -35,10 +30,7 @@ public class Console {
         System.out.println();
         System.out.println();
         System.out.println();
-
-
     }
-
 
     public void displayMenu() {
             System.out.println("%%%%%%%%%%%%% Menu Options %%%%%%%%%%%%% ");
@@ -62,7 +54,6 @@ public class Console {
 
             for (Product product : productList) {
                 System.out.println("Stock of " + product.getName() + " is " + product.getQtyAvailable() + " priced at " + "$" + product.getRetailPricePerPound() + " per pound.");
-
             }
             System.out.println("-----------------------------------------");
             System.out.println();
@@ -76,6 +67,5 @@ public class Console {
             spaceCounter++;
         }
     }
-
 
 }
