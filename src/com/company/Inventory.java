@@ -26,7 +26,6 @@ public class Inventory {
 //    }
 // This new method to handle adding items to inventory.
     public void addToInventory(String category) {
-//        Product produce = new Product(category, inventoryId, name, retailPricePerPound, cost, qty);
         switch (category) {
             case "1":
                 System.out.println("Name: ");
@@ -42,6 +41,7 @@ public class Inventory {
                 Fruit fruit = new Fruit(fruitType, fruitColor, fruitQty, fruitRetailPricePerPound);
                 inventoryList.add(fruit);
                 break;
+
             case "2":
                 System.out.println("Name: ");
                 String meatType = Console.scanner.next();
@@ -54,6 +54,7 @@ public class Inventory {
                 Meat meat = new Meat(meatType, meatQty, meatRetailPricePerPound);
                 inventoryList.add(meat);
                 break;
+
             case "3":
                 System.out.println("Name: ");
                 String vegType = Console.scanner.next();
@@ -107,21 +108,10 @@ public class Inventory {
                 shrinkageTotal = qty * product.getCost();
                 System.out.println();
                 System.out.println("Current shrinkage: " + qty + " " + product.getName() + " for a loss of: " + shrinkageTotal);
-
            }
-
         }
-        //getInventoryList().removeIf(product -> product.getName().equals(name));
-
-
-}
-
-//    public void displayProducts(List<Product> productList) {
-//        for (Product product : productList) {
-//            System.out.println("Stock of " + product.getName() + " is " + product.getQtyAvailable() + " priced at " + "$" + product.getRetailPricePerPound() + " per pound.");
-//
-//        }
-//    }
+        getInventoryList().removeIf(product -> product.getName().equals(name));
+   }
 
    public List<Product> getInventoryList() {
        return inventoryList;
@@ -132,29 +122,13 @@ public class Inventory {
        inventoryList.add(product);
     }
 
-//   public List<Product> getReOrder() {
-//
-//       return new ArrayList<>(reOrder);
-//   }
-
     public void setReOrder(Product product) {
 
        reOrder.add(product);
     }
 
-   public List<Product> getShrinkage() {
-
-       return new ArrayList<>(shrinkage);
-   }
-
-    public void setShrinkage(List<Product> shrinkage) {
-
-       this.shrinkage = shrinkage;
-    }
-
     public double getMargin() {
        return margin;
     }
-
 
 }
