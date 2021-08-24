@@ -59,6 +59,18 @@ public class Console {
             System.out.println();
     }
 
+    public void displayShrink(List<Product> productList) {
+            System.out.println("%%%%%%%%%%% Shrinkage Report %%%%%%%%%%%");
+            System.out.println("-----------------------------------------");
+            System.out.println();
+
+            for (Product product : productList) {
+                System.out.println("Stock of " + product.getName() + " is " + product.getQtyAvailable() + " priced at " + "$" + product.getRetailPricePerPound() + " per pound.");
+            }
+            System.out.println("-----------------------------------------");
+            System.out.println();
+    }
+
 
     public static void spaces() {
         int spaceCounter = 0;
