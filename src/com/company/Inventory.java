@@ -105,7 +105,7 @@ public class Inventory {
                 product.setQtyAvailable(product.getQtyAvailable() - qty);
                // System.out.println("You selected to remove: " + product.getName() + " from inventory. Is this correct y/n: ");
                 shrinkage.add(product);
-                shrinkageTotal = qty * product.getCost();
+                shrinkageTotal = qty * product.getRetailPricePerPound();
                 System.out.println();
                 System.out.println("Current shrinkage: " + qty + " " + product.getName() + " for a loss of: " + shrinkageTotal);
            }

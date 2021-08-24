@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,10 +17,6 @@ public class ProduceStand {
         console.openLogin();
         handleMenu();
     }
-
-
-
-
 
 
     public void sellProduct(String name, int qty) {
@@ -165,6 +162,7 @@ public class ProduceStand {
 
                 case 3:
                     System.out.println("%%%%%%%%%%%%% Dispose Item %%%%%%%%%%%%% ");
+                    console.displayProducts(standInventory.getInventoryList());
                     System.out.println("Name: ");
                     name = Console.scanner.next();
                     System.out.println("Qty");
